@@ -54,7 +54,7 @@ class _MobileScannerWidgetState extends State<MobileScannerWidget> {
           controller: _controller,
           fit: BoxFit.cover,
           scanWindow: scanWindow,
-          errorBuilder: (context, error) {
+          errorBuilder: (context, error, child) {
             return ScannerErrorWidget(error: error);
           },
         ),
@@ -141,25 +141,24 @@ class ScannerOverlay extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     // we need to pass the size to the custom paint widget
-    final backgroundPath =
-        Path()..addRect(Rect.fromLTWH(0, 0, size.width, size.height));
+    final backgroundPath = Path()
+      ..addRect(Rect.fromLTWH(0, 0, size.width, size.height));
 
-    final cutoutPath =
-        Path()..addRRect(
-          RRect.fromRectAndCorners(
-            scanWindow,
-            topLeft: Radius.circular(borderRadius),
-            topRight: Radius.circular(borderRadius),
-            bottomLeft: Radius.circular(borderRadius),
-            bottomRight: Radius.circular(borderRadius),
-          ),
-        );
+    final cutoutPath = Path()
+      ..addRRect(
+        RRect.fromRectAndCorners(
+          scanWindow,
+          topLeft: Radius.circular(borderRadius),
+          topRight: Radius.circular(borderRadius),
+          bottomLeft: Radius.circular(borderRadius),
+          bottomRight: Radius.circular(borderRadius),
+        ),
+      );
 
-    final backgroundPaint =
-        Paint()
-          ..color = Colors.black.withOpacity(0.7)
-          ..style = PaintingStyle.fill
-          ..blendMode = BlendMode.dstOver;
+    final backgroundPaint = Paint()
+      ..color = Colors.black.withOpacity(0.7)
+      ..style = PaintingStyle.fill
+      ..blendMode = BlendMode.dstOver;
 
     final backgroundWithCutout = Path.combine(
       PathOperation.difference,
@@ -167,11 +166,10 @@ class ScannerOverlay extends CustomPainter {
       cutoutPath,
     );
 
-    final borderPaint =
-        Paint()
-          ..color = borderColor
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 4.0;
+    final borderPaint = Paint()
+      ..color = borderColor
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 4.0;
 
     final borderRect = RRect.fromRectAndCorners(
       scanWindow,
