@@ -12,7 +12,10 @@ dependencies:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
 
-  mobile_scanner: ^6.0.10
+  mobile_scanner:
+    git:
+      url: https://github.com/JanKokalj/mobile_scanner/
+      ref: ff_workaround
   nordicidnurplugin:
     git:
       url: https://github.com/Calda-Development/NordicID-Nur-FlutterPlugin

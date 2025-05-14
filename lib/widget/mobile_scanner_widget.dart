@@ -54,7 +54,7 @@ class _MobileScannerWidgetState extends State<MobileScannerWidget> {
           controller: _controller,
           fit: BoxFit.cover,
           scanWindow: scanWindow,
-          errorBuilder: (context, error, child) {
+          errorBuilder: (context, error) {
             return ScannerErrorWidget(error: error);
           },
         ),
