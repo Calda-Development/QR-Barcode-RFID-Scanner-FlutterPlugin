@@ -12,14 +12,11 @@ dependencies:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
 
-  mobile_scanner:
-    git:
-      url: https://github.com/JanKokalj/mobile_scanner/
-      ref: ff_workaround
+  mobile_scanner: ^6.0.10
   nordicidnurplugin:
     git:
       url: https://github.com/Calda-Development/NordicID-Nur-FlutterPlugin
-#      ref: 0.0.2
+  flutter_datawedge: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -49,6 +46,12 @@ flutter:
       ios:
         pluginClass: QrBarcodeRfidScannerPlugin
 
+  assets:
+    - assets/images/
+#    - assets/images/flash_off.png
+#    - assets/images/flash_on.png
+#    - packages/qr_barcode_rfid_scanner/assets/flash_off.png
+  # /Users/jankokalj/projects/Calda/packages/qr_barcode_rfid_scanner/packages/qr_barcode_rfid_scanner/assets/images/
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
