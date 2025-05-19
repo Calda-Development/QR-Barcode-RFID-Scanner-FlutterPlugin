@@ -81,6 +81,12 @@ class MyHome extends StatelessWidget {
                 }),
             _buildItem(
                 context: context,
+                label: 'Disconnect Scanner',
+                onPressed: () {
+                  qrBarcodeRfidScannerPlugin.disconnect();
+                }),
+            _buildItem(
+                context: context,
                 label: 'Barcode Scanner',
                 onPressed: () {
                   qrBarcodeRfidScannerPlugin.startBarcodeScan(

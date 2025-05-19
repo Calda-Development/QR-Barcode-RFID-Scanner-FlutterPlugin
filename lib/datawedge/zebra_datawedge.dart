@@ -62,4 +62,8 @@ class ZebraDatawedge {
       }
     }
   }
+
+  disconnect() {
+    // Not implemented
+  }
 }

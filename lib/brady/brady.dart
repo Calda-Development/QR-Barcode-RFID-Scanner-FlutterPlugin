@@ -121,4 +121,12 @@ class Brady {
 
     _nordicIDNurPlugin?.setInventoryStreamMode();
   }
+
+  Future<void> disconnect() async {
+    _isInitialised = false;
+    _isConnected = false;
+    _inventoryStreamActive = false;
+
+    await _nordicIDNurPlugin?.disconnect();
+  }
 }

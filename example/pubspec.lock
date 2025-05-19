@@ -219,11 +219,11 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: HEAD
-      resolved-ref: "59970a24fa1b2abe6baa487406eb0589bf04f28e"
+      ref: "v0.0.2"
+      resolved-ref: "2abdf3a4ded47f6179aafbe660ee46f96fbf7d38"
       url: "https://github.com/Calda-Development/NordicID-Nur-FlutterPlugin"
     source: git
-    version: "0.0.1"
+    version: "0.0.2"
   path:
     dependency: transitive
     description:
