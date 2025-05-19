@@ -5,12 +5,16 @@ import 'package:qr_barcode_rfid_scanner/rfid/rfid_singleton.dart';
 import 'barcode/barcode_singleton.dart';
 import 'brady/brady.dart';
 import 'datawedge/zebra_datawedge.dart';
-import 'qr_barcode_rfid_scanner_platform_interface.dart';
 
 class QrBarcodeRfidScanner {
-  Future<String?> getPlatformVersion() {
-    return QrBarcodeRfidScannerPlatform.instance.getPlatformVersion();
+  static final QrBarcodeRfidScanner _instance =
+      QrBarcodeRfidScanner._internal();
+
+  factory QrBarcodeRfidScanner() {
+    return _instance;
   }
+
+  QrBarcodeRfidScanner._internal();
 
   Future<void> init() async {
     debugPrint('QrBarcodeRfidScanner init');

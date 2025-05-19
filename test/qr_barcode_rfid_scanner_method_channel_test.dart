@@ -5,11 +5,13 @@ import 'package:qr_barcode_rfid_scanner/qr_barcode_rfid_scanner_method_channel.d
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  MethodChannelQrBarcodeRfidScanner platform = MethodChannelQrBarcodeRfidScanner();
+  MethodChannelQrBarcodeRfidScanner platform =
+      MethodChannelQrBarcodeRfidScanner();
   const MethodChannel channel = MethodChannel('qr_barcode_rfid_scanner');
 
   setUp(() {
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(
       channel,
       (MethodCall methodCall) async {
         return '42';
@@ -18,10 +20,7 @@ void main() {
   });
 
   tearDown(() {
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(channel, null);
-  });
-
-  test('getPlatformVersion', () async {
-    expect(await platform.getPlatformVersion(), '42');
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(channel, null);
   });
 }

@@ -8,7 +8,8 @@ abstract class QrBarcodeRfidScannerPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static QrBarcodeRfidScannerPlatform _instance = MethodChannelQrBarcodeRfidScanner();
+  static QrBarcodeRfidScannerPlatform _instance =
+      MethodChannelQrBarcodeRfidScanner();
 
   /// The default instance of [QrBarcodeRfidScannerPlatform] to use.
   ///
@@ -21,9 +22,5 @@ abstract class QrBarcodeRfidScannerPlatform extends PlatformInterface {
   static set instance(QrBarcodeRfidScannerPlatform instance) {
     PlatformInterface.verifyToken(instance, _token);
     _instance = instance;
-  }
-
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
   }
 }

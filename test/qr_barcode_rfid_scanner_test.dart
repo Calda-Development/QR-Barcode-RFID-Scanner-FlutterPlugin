@@ -6,24 +6,13 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockQrBarcodeRfidScannerPlatform
     with MockPlatformInterfaceMixin
-    implements QrBarcodeRfidScannerPlatform {
-
-  @override
-  Future<String?> getPlatformVersion() => Future.value('42');
-}
+    implements QrBarcodeRfidScannerPlatform {}
 
 void main() {
-  final QrBarcodeRfidScannerPlatform initialPlatform = QrBarcodeRfidScannerPlatform.instance;
+  final QrBarcodeRfidScannerPlatform initialPlatform =
+      QrBarcodeRfidScannerPlatform.instance;
 
   test('$MethodChannelQrBarcodeRfidScanner is the default instance', () {
     expect(initialPlatform, isInstanceOf<MethodChannelQrBarcodeRfidScanner>());
-  });
-
-  test('getPlatformVersion', () async {
-    QrBarcodeRfidScanner qrBarcodeRfidScannerPlugin = QrBarcodeRfidScanner();
-    MockQrBarcodeRfidScannerPlatform fakePlatform = MockQrBarcodeRfidScannerPlatform();
-    QrBarcodeRfidScannerPlatform.instance = fakePlatform;
-
-    expect(await qrBarcodeRfidScannerPlugin.getPlatformVersion(), '42');
   });
 }
