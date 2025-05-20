@@ -29,7 +29,7 @@ class QrBarcodeRfidScanner {
   }
 
   void startBarcodeScan({
-    required Null Function(dynamic result) onScanResult,
+    required Null Function(String result) onScanResult,
     required bool stopListeningAfterScanResult,
   }) {
     debugPrint('QrBarcodeRfidScanner startBarcodeScan');

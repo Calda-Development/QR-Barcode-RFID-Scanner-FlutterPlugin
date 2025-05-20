@@ -67,7 +67,7 @@ class Brady {
   }
 
   Future<void> startBarcodeScan({
-    required Null Function(dynamic result) onScanResult,
+    required Null Function(String result) onScanResult,
     required bool stopListeningAfterScanResult,
   }) async {
     if (_nordicIDNurPlugin == null || _isInitialised == false) {
