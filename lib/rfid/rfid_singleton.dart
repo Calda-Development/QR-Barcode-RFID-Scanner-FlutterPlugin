@@ -1,6 +1,5 @@
 import 'package:nordicidnurplugin/nordicidnurplugin.dart';
 import 'package:qr_barcode_rfid_scanner/brady/brady.dart';
-import 'package:qr_barcode_rfid_scanner/datawedge/zebra_datawedge.dart';
 
 class RfidSingleton {
   static final RfidSingleton _instance = RfidSingleton._internal();
@@ -25,5 +24,21 @@ class RfidSingleton {
     required Null Function(List<String> data) onScanResult,
   }) {
     Brady().setInventoryStreamMode(onScanResult: onScanResult);
+  }
+
+  void setOnSingleRfidScanStatusChange({
+    Null Function(bool singleRFIDScanActive)? onSingleRfidScanStatusChange,
+  }) {
+    Brady().setOnSingleRfidScanStatusChange(
+      onSingleRfidScanStatusChange: onSingleRfidScanStatusChange,
+    );
+  }
+
+  void setOnInventoryStreamScanStatusChange(
+      {Null Function(bool inventoryStreamActive)?
+          onInventoryStreamScanStatusChange}) {
+    Brady().setOnInventoryStreamScanStatusChange(
+      onInventoryStreamScanStatusChange: onInventoryStreamScanStatusChange,
+    );
   }
 }

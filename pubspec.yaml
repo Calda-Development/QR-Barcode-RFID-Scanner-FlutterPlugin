@@ -1,6 +1,6 @@
 name: qr_barcode_rfid_scanner
 description: "A new Flutter plugin project."
-version: 0.0.8
+version: 0.0.9
 publish_to: 'none'
 
 environment:

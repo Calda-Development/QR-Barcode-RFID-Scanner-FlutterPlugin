@@ -48,12 +48,29 @@ class QrBarcodeRfidScanner {
     );
   }
 
+  Future<void> setOnSingleRfidScanStatusChange({
+    Null Function(bool singleRFIDScanActive)? onSingleRfidScanStatusChange,
+  }) async {
+    RfidSingleton().setOnSingleRfidScanStatusChange(
+      onSingleRfidScanStatusChange: onSingleRfidScanStatusChange,
+    );
+  }
+
   void setInventoryStreamMode({
     required Null Function(List<String> data) onScanResult,
   }) {
     debugPrint('QrBarcodeRfidScanner setInventoryStreamMode');
     RfidSingleton().setInventoryStreamMode(
       onScanResult: onScanResult,
+    );
+  }
+
+  Future<void> setOnInventoryStreamScanStatusChange({
+    required Null Function(bool inventoryStreamActive)?
+        onInventoryStreamScanStatusChange,
+  }) async {
+    RfidSingleton().setOnInventoryStreamScanStatusChange(
+      onInventoryStreamScanStatusChange: onInventoryStreamScanStatusChange,
     );
   }
 }
